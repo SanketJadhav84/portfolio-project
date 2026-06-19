@@ -3,7 +3,7 @@ async function loadProjects() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/projects"
+            "http://65.0.204.95:30050/api/messages"
         );
 
         const projects = await response.json();
