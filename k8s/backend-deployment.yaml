@@ -27,7 +27,7 @@ spec:
 
         env:
         - name: DB_HOST
-          value: "mysql-service"
+          value: "10.104.79.170"
 
         - name: DB_USER
           value: "root"
