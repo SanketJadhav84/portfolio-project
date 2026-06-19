@@ -69,6 +69,31 @@ protocol    = "tcp"
 cidr_blocks = ["0.0.0.0/0"]
 }
 
+
+ingress {
+description = "Calico BGP networking"
+from_port   = 179
+to_port     = 179
+protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+
+ingress {
+description = "Calico VXLAN overlay network"
+from_port   = 4789
+to_port     = 4789
+protocol    = "udp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+
+ingress {
+description = " etcd database"
+from_port   = 2379
+to_port     = 2380
+protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+
 ingress {
 description = "Jenkins"
 from_port   = 8080
@@ -89,6 +114,22 @@ ingress {
 description = "Kubelet"
 from_port   = 10250
 to_port     = 10250
+protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+
+ingress {
+description = "Controller Manager"
+from_port   = 10257	   
+to_port     = 10257	   
+protocol    = "tcp"
+cidr_blocks = ["0.0.0.0/0"]
+}
+
+ingress {
+description = "scheduler"
+from_port   = 10259	   
+to_port     = 10259	   
 protocol    = "tcp"
 cidr_blocks = ["0.0.0.0/0"]
 }
