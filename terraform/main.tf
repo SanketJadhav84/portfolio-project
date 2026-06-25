@@ -163,6 +163,10 @@ resource "aws_instance" "master_ec2" {
     subnet_id = aws_subnet.portfolio_project_subnet.id
     associate_public_ip_address = true
 
+    root_block_device {
+        volume_size = 20
+    } 
+
     tags = {
         Name = "Master-EC2"
     }
@@ -176,6 +180,10 @@ resource "aws_instance" "worker_ec2" {
     vpc_security_group_ids = [aws_security_group.k8s_sg.id]
     subnet_id = aws_subnet.portfolio_project_subnet.id
     associate_public_ip_address = true
+
+    root_block_device {
+        volume_size = 20
+    }
 
     tags = {
         Name = "Worker-EC2"
